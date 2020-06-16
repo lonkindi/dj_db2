@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 from m2m.views import articles_list
+from school.views import students_list
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', articles_list, name='m2m'),
+    path('m2m/', articles_list, name='m2m'),
+    path('school/', students_list, name='school'),
 ]

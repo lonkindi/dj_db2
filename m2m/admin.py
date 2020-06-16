@@ -29,7 +29,7 @@ class RelationshipInline(admin.TabularInline):
 
 
 @admin.register(Section)
-class ObjectAdmin(admin.ModelAdmin):
+class SectionAdmin(admin.ModelAdmin):
     pass
 
 
