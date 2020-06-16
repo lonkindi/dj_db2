@@ -6,15 +6,15 @@
 <div class="row">
     <ul>
         {% for student in students %}
-            <li>{{ student.name }} {{ student.group }} <br>
+        <li>{{ student.name }} {{ student.group }} <br>
             Преподаватели:
-                <ul>
-            {% for teacher in student.teacher.all %}
-            <li>{{ teacher.name }} - {{ teacher.subject }}</li>
+            <ul>
+                {% for teacher in student.teacher.all %}
+                <li>{{ teacher.name }} - {{ teacher.subject }}</li>
+                {% endfor %}
+            </ul>
+            <hr>
             {% endfor %}
-                </ul>
-                <hr>
-        {% endfor %}
     </ul>
 </div>
 {% endblock %}
