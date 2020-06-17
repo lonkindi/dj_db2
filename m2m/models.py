@@ -18,7 +18,6 @@ class Article(models.Model):
 
 class Section(models.Model):
     name = models.CharField(max_length=64, verbose_name='Секция', null=False)
-    articles = models.ManyToManyField(Article, through='Relations', related_name='sect')
 
     class Meta:
         verbose_name = 'Секция'
@@ -36,4 +35,4 @@ class Relations(models.Model):
     class Meta:
         verbose_name = 'Секция в статье'
         verbose_name_plural = 'Секции в статье'
-        ordering = ["sections__name"]
+        ordering = ["-is_main", "sections__name"]

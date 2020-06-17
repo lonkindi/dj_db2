@@ -5,10 +5,9 @@ from m2m.models import Article, Section, Relations
 
 
 def articles_list(request):
-    articles = Article.objects.all()
+    articles = Article.objects.all().prefetch_related('sections')
     template = 'm2m/news.html'
-    context = {'object_list': articles,
-               }
+    context = {'object_list': articles}
 
     # используйте этот параметр для упорядочивания результатов
     # https://docs.djangoproject.com/en/2.2/ref/models/querysets/#django.db.models.query.QuerySet.order_by
